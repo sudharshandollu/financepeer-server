@@ -104,7 +104,6 @@ app.post("/login", async (request, response) => {
 });
 
 app.post("/posts", async (request, response) => {
-  console.log("hi");
   const { username, data } = request.body;
   const query = `UPDATE user SET data = '${data}' WHERE username='${username}'`;
   await database.run(query);
@@ -113,11 +112,10 @@ app.post("/posts", async (request, response) => {
 
 app.get("/post", async (request, response) => {
   const { username } = request.query;
-  //console.log(request.query);
-  //console.log(username);
+
   const query = `SELECT data FROM user WHERE username = '${username}';`;
   const data = await database.get(query);
-  console.log(data);
+
   response.send(data);
 });
 
