@@ -1,13 +1,9 @@
-POST http://localhost:5000/register/
+POST https://financepeer.herokuapp.com/login/
 Content-Type: application/json
 
 
 
 {
-    "username": "sunil",
-    "name": "Sunil Dollu",
-    "password": "12345",
-    "gender": "Male",
-    "locaion": "Hyderabad"
-
+    "username": "dollu",
+    "password": "123456789"
 }
